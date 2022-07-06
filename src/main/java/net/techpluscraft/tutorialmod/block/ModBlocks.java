@@ -13,6 +13,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.registry.Registry;
 import net.techpluscraft.tutorialmod.TutorialMod;
 import net.techpluscraft.tutorialmod.block.custom.JumpyBlock;
+import net.techpluscraft.tutorialmod.block.custom.TanzaniteLampBlock;
 import net.techpluscraft.tutorialmod.item.ModItemGroup;
 
 public class ModBlocks {
@@ -28,6 +29,9 @@ public class ModBlocks {
 
     public static final Block JUMPY_BLOCK = registerBlock("jumpy_block",
             new JumpyBlock(FabricBlockSettings.of(Material.METAL).strength(4f).requiresTool()), ModItemGroup.TANZANITE);
+
+    public static final Block TANZANITE_LAMP = registerBlock("tanzanite_lamp",
+            new TanzaniteLampBlock(FabricBlockSettings.of(Material.METAL).strength(4f).requiresTool().luminance(state -> state.get(TanzaniteLampBlock.LIT) ? 15 : 0)), ModItemGroup.TANZANITE);
 
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {
